@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Ordinateurs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style-4.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>TechStore</h1>
+                    <p>Votre expert en matériel informatique</p>
+                </div>
+                <nav>
+                    <ul>
+                        <li class="active"><a href="../index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                        <li class="active"><a href="ordinateurs.html"><i class="fas fa-laptop"></i> Ordinateurs</a></li>
+                        <li class="active"><a href="périphérique.html"><i class="fas fa-mobile-alt"></i>Périphériques</a></li>
+                        <li class="active"><a href="accessoires.html"><i class="fas fa-headphones"></i> Accessoires</a></li>
+                        <li><a href="panier.html"><i class="fas fa-shopping-cart"></i> Panier <span id="cart-count">0</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-ordinateurs">
+        <section class="search-section">
+            <div class="container">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Rechercher un périphérique...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="computer-categories">
+            <div class="container">
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all">Tous</button>
+                    <button class="filter-btn" data-category="portable">Souris</button>
+                    <button class="filter-btn" data-category="bureau">Claviers</button>
+                    <button class="filter-btn" data-category="gaming">Casque</button>
+                    <button class="filter-btn" data-category="pro">Câbles</button>
+                </div>
+
+                <div class="product-grid">
+                    <!-- Câbles 1 -->
+                    <div class="product-card" data-id="1" data-category="ordinateur">
+                        <div class="product-image">
+                            <img src="../images/imgca-1.jpg" alt="controle Cable:An Utlimate Guide to it">
+                        </div>
+                        <div class="product-info">
+                            <h3>controle Cable:An Utlimate Guide to it</h3>
+                            <div class="product-footer">
+                                <span class="price">26$</span>
+                                <button class="add-to-cart">
+                                    <i class="fas fa-shopping-cart"></i> Panier
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cable 2 -->
+                    <div class="product-card" data-id="1" data-category="ordinateur">
+                        <div class="product-image">
+                            <img src="../images/imgca-2.jpg" alt="Rj12 Kabel Winkel Online">
+                        </div>
+                        <div class="product-info">
+                            <h3>Rj12 Kabel Winkel Online- Goedkope rj12 kabels te koop</h3>
+                            <div class="product-footer">
+                                <span class="price">9$</span>
+                                <button class="add-to-cart">
+                                    <i class="fas fa-shopping-cart"></i> Panier
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Souris 3 -->
+                    <div class="product-card" data-id="1" data-category="ordinateur">
+                        <div class="product-image">
+                            <img src="../images/imgsou 1.jpg" alt="Souris D'ordinateur Kult 200 - Souris BUT">
+                        </div>
+                        <div class="product-info">
+                            <h3>Souris D'ordinateur Kult 200 - Souris BUT</h3>
+                            <div class="product-footer">
+                                <span class="price">10$</span>
+                                <button class="add-to-cart">
+                                    <i class="fas fa-shopping-cart"></i> Panier
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Ordinateur 4-->
+                    <div class="product-card" data-id="1" data-category="ordinateur">
+                        <div class="product-image">
+                            <img src="../images/imgsou2.jpg" alt="Souris Wi-Fi optique Logitech M175 noir">
+                        </div>
+                        <div class="product-info">
+                            <h3>Souris Wi-Fi optique Logitech M175 noir</h3>
+                            <div class="product-footer">
+                                <span class="price">12$</span>
+                                <button class="add-to-cart">
+                                    <i class="fas fa-shopping-cart"></i> Panier
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Pied de page identique à l'accueil -->
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/JavaScript.js"></script>
+
+</body>
+
+</html>

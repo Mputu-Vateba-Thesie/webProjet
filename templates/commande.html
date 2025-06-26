@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation de commande - TechStore</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FontAwesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+        }
+
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #ecf0f1;
+            font-weight: 600;
+        }
+
+        tfoot td {
+            font-weight: bold;
+            background-color: #f9f9f9;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #219150;
+        }
+
+        .empty {
+            text-align: center;
+            font-size: 18px;
+            color: #888;
+        }
+
+        .empty i {
+            font-size: 60px;
+            margin-bottom: 10px;
+            color: #bdc3c7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #999;
+        }
+
+        @media screen and (max-width: 600px) {
+            table, thead, tbody, th, td, tr {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1><i class="fas fa-check-circle"></i> Confirmation de votre commande</h1>
+</header>
+
+<main>
+    <h2>Récapitulatif de votre panier</h2>
+
+    <div id="commande">
+        <!-- Contenu dynamique inséré ici -->
+    </div>
+
+    <form method="POST" action="valider.php">
+        <input type="hidden" name="orderData" id="orderData">
+        <div style="text-align:center;">
+            <button type="submit" class="btn"><i class="fas fa-credit-card"></i> Valider votre paiement</button>
+        </div>
+    </form>
+</main>
+
+<footer>
+    &copy; 2025 TechStore. Tous droits réservés.
+</footer>
+
+<script>
+    const panier = JSON.parse(localStorage.getItem("panier")) || [];
+    const commandeDiv = document.getElementById("commande");
+    const orderDataInput = document.getElementById("orderData");
+
+    if (panier.length === 0) {
+        commandeDiv.innerHTML = `
+            <div class="empty">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Votre panier est vide</p>
+                <a href="index.html" class="btn">Continuer mes achats</a>
+            </div>
+        `;
+    } else {
+        let total = 0;
+        let html = `
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produit</th>
+                        <th>Prix</th>
+                        <th>Quantité</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        panier.forEach(item => {
+            const itemTotal = item.prix * item.quantite;
+            total += itemTotal;
+
+            html += `
+                <tr>
+                    <td>${item.nom}</td>
+                    <td>${item.prix.toFixed(2)} €</td>
+                    <td>${item.quantite}</td>
+                    <td>${itemTotal.toFixed(2)} €</td>
+                </tr>
+            `;
+        });
+
+        html += `
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Total</td>
+                        <td>${total.toFixed(2)} €</td>
+                    </tr>
+                </tfoot>
+            </table>
+        `;
+
+        commandeDiv.innerHTML = html;
+        orderDataInput.value = JSON.stringify(panier);
+    }
+</script>
+
+</body>
+</html>

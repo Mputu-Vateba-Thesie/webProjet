@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechStore - Ordinateurs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style-2.css" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>TechStore</h1>
+                    <p>Votre expert en matériel informatique</p>
+                </div>
+                <nav>
+                    <ul>
+                        <li class="active"><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                        <li><a href="ordinateurs.html"><i class="fas fa-laptop"></i> Ordinateurs</a></li>
+                        <li><a href="périphérique.html"><i class="fas fa-mobile-alt"></i> Périphériques</a></li>
+                        <li><a href="accessoires.html"><i class="fas fa-headphones"></i> Accessoires</a></li>
+                        <li><a href="panier.html"><i class="fas fa-shopping-cart"></i> Panier <span id="cart-count">0</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="page-ordinateurs">
+        <section class="search-section">
+            <div class="container">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Rechercher un ordinateur..." />
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="computer-categories">
+            <div class="container">
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all">Tous</button>
+                    <button class="filter-btn" data-category="portable">Portables</button>
+                    <button class="filter-btn" data-category="bureau">Bureaux</button>
+                    <button class="filter-btn" data-category="pro">Professionnels</button>
+                </div>
+
+                <div class="product-grid">
+                    <!-- Ordinateur 1 -->
+                    <div class="product-card" data-id="1" data-category="ordinateur">
+                        <div class="product-image">
+                            <img src="../images/Img3.jpg" alt="HP Laptop" />
+                        </div>
+                        <div class="product-info">
+                            <h3>HP Laptop 15-fd0297</h3>
+                            <ul class="specs">
+                                <li>Core i5</li>
+                                <li>8Go RAM</li>
+                                <li>250Go SSD</li>
+                            </ul>
+                            <div class="product-footer">
+                                <span class="price">800$</span>
+                                <button class="add-to-cart">
+                                    <i class="fas fa-shopping-cart"></i> Panier
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ordinateur 2 -->
+                    <div class="product-card" data-id="2" data-category="ordinateur">
+                        <div class="product-image">
+                            <img src="../images/Img3.jpg" alt="HP Elitebook" />
+                        </div>
+                        <div class="product-info">
+                            <h3>HP Elitebook</h3>
+                            <ul class="specs">
+                                <li>Core i5</li>
+                                <li>8Go RAM</li>
+                                <li>250Go SSD</li>
+                            </ul>
+                            <div class="product-footer">
+                                <span class="price">350$</span>
+                                <button class="add-to-cart">
+                                    <i class="fas fa-shopping-cart"></i> Panier
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ordinateur 3 -->
+                    <div class="product-card" data-id="3" data-category="ordinateur">
+                        <div class="product-image">
+                            <img src="../images/img f 1.jpg" alt="iMac Retina 5K" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Apple iMac 27" écran Retina 5K</h3>
+                            <ul class="specs">
+                                <li>Core i5</li>
+                                <li>8Go RAM</li>
+                                <li>512Go SSD</li>
+                            </ul>
+                            <div class="product-footer">
+                                <span class="price">1.299$</span>
+                                <button class="add-to-cart">
+                                    <i class="fas fa-shopping-cart"></i> Panier
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ordinateur 4 -->
+                    <div class="product-card" data-id="4" data-category="ordinateur">
+                        <div class="product-image">
+                            <img src="../images/img 4.png" alt="Galaxy Book Flex" />
+                        </div>
+                        <div class="product-info">
+                            <h3>Samsung Galaxy Book Flex</h3>
+                            <ul class="specs">
+                                <li>Intel Core i5</li>
+                                <li>16Go RAM</li>
+                                <li>512Go SSD</li>
+                            </ul>
+                            <div class="product-footer">
+                                <span class="price">349$</span>
+                                <button class="add-to-cart">
+                                    <i class="fas fa-shopping-cart"></i> Panier
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ordinateur 5 -->
+                    <div class="product-card" data-id="5" data-category="ordinateur">
+                        <div class="product-image">
+                            <img src="../images/Img3.jpg" alt="PC Gaming Pro" />
+                        </div>
+                        <div class="product-info">
+                            <h3>PC Gaming Pro</h3>
+                            <ul class="specs">
+                                <li>AMD Ryzen 9</li>
+                                <li>32Go RAM</li>
+                                <li>1To SSD</li>
+                                <li>RTX 4080</li>
+                            </ul>
+                            <div class="product-footer">
+                                <span class="price">1899 €</span>
+                                <button class="add-to-cart">
+                                    <i class="fas fa-shopping-cart"></i> Panier
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- end product-grid -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Pied de page -->
+                <p>&copy; 2025 TechStore. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/JavaScript.js"></script>
+</body>
+
+</html>
